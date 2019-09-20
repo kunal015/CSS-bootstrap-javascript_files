@@ -1,0 +1,179 @@
+<html>
+ 	<head>
+		<title>CSS</title>
+		<style type="text/CSS">
+		body
+			{
+				background-color:red;
+				background-image:none;
+				background-repeat:no-repeat;
+				background-position:right bottom;
+				margin:0px;
+				padding:0px;
+			}
+		p
+			{
+				margin:0;
+				padding:0;
+			}
+		#mainarea{
+				background:yellow top left fixed;
+				width:1000px;
+				height:1050px;
+				margin:0px auto;
+				padding:0px;
+			 }
+		.name{
+				width:998px;
+				height:50px;
+				margin:0px;
+				padding:0px;
+				background:blue;
+				border-top:1px solid black;
+				border-right:1px solid black;
+				border-left:1px solid black;
+			}
+		
+		.name1{
+				width:494px;
+				height:45px;
+				margin:0px;
+				padding:5px 0px 0px 5px;
+				background:lightgreen;
+				float:left;
+			}
+		select{
+			position:absolute;
+			}	
+		.msg{
+				width:998px;
+				height:199px;
+				margin:0;
+				padding:0px;
+				background:lightgreen;
+				border-top:1px solid black;
+				border-right:1px solid black;
+				border-left:1px solid black;
+			}
+		.msg1{
+				width:494px;
+				height:194px;
+				margin:0px;
+				padding:5px 0px 0px 5px;
+				background:lightblue;
+				float:left;
+			}
+		textarea{
+				width:450px;
+				height:180px;
+				border:none;
+				background:lightblue;
+				border-bottom:black 1px dotted;
+				resize:none;
+			}
+		input[type=submit]{
+					width:100px;
+					height:40px;
+				}
+		input[type=reset]{
+					width:100px;
+					height:40px;
+				}
+		/*#slidearea2{
+				width:1000px;
+				height:200px;
+				margin:0;
+				padding:0;
+				background:white;
+			}
+		#contentarea{
+				width:1000px;
+				height:300px;
+				margin:0;
+				padding:0;
+				background:blue;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id="mainarea">
+			<form name="hello" onSubmit="return(myfunc1());">
+			<div class="name">
+				<div class="name1"><label>NAME</label></div>
+				<div class="name1"><input type="text" name="nm" placeholder="Enter your name"/></div>
+			</div>
+			<div class="name">
+				<div class="name1"><label>Mobile No.</label></div>
+				<div class="name1"><input type="text" name="mobile" placeholder="Enter your mobile phone no."/></div>
+			</div>
+			<div class="name">
+				<div class="name1"><label>GENDER</label></div>
+				<div class="name1"><input type="radio" name="gender" value="m"/>MALE
+						   <input type="radio" name="gender" value="f"/>FEMALE
+				</div>
+			</div>
+			<div class="name">
+				<div class="name1"><label>ID CARD</label></div>
+				<div class="name1"><input type="checkbox" name="aadhar" value="1" checked/>AADHAR CARD
+						   <input type="checkbox" name="pan" value="1"/>PAN CARD
+				</div>
+			</div>
+			<div class="name">
+				<div class="name1"><label>STATE</label></div>
+				<div class="name1"><select name="state">
+						   <option value="">select</option>
+						   <option value="JH">JHARKHAND</option>
+						   <option value="BR">BIHAR</option>
+						   <option value="OR">ORISSA</option>
+						   </select>	
+				</div>
+			</div>
+			<div class="msg">
+				<div class="msg1"><label>MESSAGE</label></div>
+				<div class="msg1"><textarea name="msg">
+							</textarea>
+				</div>
+				</div>
+			<div class="name">
+				<div class="name1"><input type="submit" value="save"/></div>
+				<div class="name1"><input type="reset" value="clear"/></div>
+			</div>
+			</form>
+		</div>
+	</body>
+	<script>
+		function myfunc()
+		{
+			return confirm("Are You Sure You Wan't To Submit The Form");
+			
+		}
+		function myfunc1()
+		{
+			if(document.hello.nm.value.length=="")
+			{
+				alert("please enter name properly");
+				return false;
+			}
+			if((isNaN(document.hello.mobile.value))||(document.hello.mobile.value.length!=10))
+				{
+					alert("please enter valid mobile no.");
+					return false;
+				}
+			if(documemt.hello.gender.value=="")
+				{
+					alert("please select a gender");
+					return false;
+				}
+			if(document.hello.state.value=="")
+				{
+					alert("please select a state");
+					return false;
+				}
+			if(documemt.hello.aadhar.value!="1"||document.hello.aadhar.value="1")
+				{
+					alert("please select atleast one identity proof");
+					return false;
+				}
+		}
+	</script>
+</html>
